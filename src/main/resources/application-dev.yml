@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/book_verse
+    username: username
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+application:
+  security:
+    jwt:
+      secret-key: N6SGJXiYCY/gW8HIP0D9s2V/bMF5/3xsDXVoRYNMkkW+zxUXaN5kPlX4nxvvMHjs
+      expiration: 86400000 # a day
+      refresh-token:
+        expiration: 604800000 # 7 days
+  file:
+    uploads:
+      photos-output-path: ./uploads
+server:
+  port: 8080
